@@ -12,9 +12,6 @@ type Post = {
 };
 
 const PostItem: React.FC<{ post: Post }> = (props) => {
-  console.log("props.posts");
-  console.log(props.post);
-
   const { title, image, excerpt, date, slug } = props.post;
 
   const formattedDate = new Date(date).toLocaleDateString("en-US", {
