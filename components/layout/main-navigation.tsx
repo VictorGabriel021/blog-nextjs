@@ -7,8 +7,10 @@ import Logo from "./logo";
 const MainNavigation = () => {
   return (
     <header className={classes.header}>
-      <Link href="/" passHref>
-        <Logo />
+      <Link href="/">
+        <a>
+          <Logo />
+        </a>
       </Link>
       <nav>
         <ul>
