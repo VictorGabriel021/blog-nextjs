@@ -5,16 +5,13 @@ import PostHeader from "./post-header";
 import ReactMarkdown from "react-markdown";
 import Image from "next/image";
 
-import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-import { atomDark } from "react-syntax-highlighter/dist/cjs/styles/prism";
+import { PrismLight as SyntaxHighlighter } from "react-syntax-highlighter";
+import atomDark from "react-syntax-highlighter/dist/cjs/styles/prism/atom-dark";
+import js from "react-syntax-highlighter/dist/cjs/languages/prism/javascript";
+import css from "react-syntax-highlighter/dist/cjs/languages/prism/css";
 
-const DUMMY_POST = {
-  slug: "getting-started-with-nextjs-1",
-  title: "Getting Started with Nextjs",
-  image: "getting-started-nextjs.png",
-  date: "2022-02-10",
-  content: "# This is a first post",
-};
+SyntaxHighlighter.registerLanguage("js", js);
+SyntaxHighlighter.registerLanguage("css", css);
 
 const PostContent: React.FC<{ post: any }> = (props) => {
   const imagePath = `/images/posts/${props.post.slug}/${props.post.image}`;
